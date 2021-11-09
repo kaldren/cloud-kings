@@ -9,6 +9,7 @@ function SearchBar() {
         <div id="searchBar">
             <SearchIcon className="icon-search" />
             <input type="text" className="searchBar__input" />
+            <button className="searchBar__searchButton">Search</button>
         </div>
     )
 }

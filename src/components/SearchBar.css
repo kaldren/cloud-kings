@@ -1,5 +1,6 @@
 #searchBar {
     position: relative;
+    display: flex;
 }
 
 #searchBar .icon-search {
@@ -16,4 +17,10 @@
     height:60px;
     font-size: 1.2rem;
     padding:0px 60px;
+}
+
+#searchBar .searchBar__searchButton {
+    width: 100px;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
