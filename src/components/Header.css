@@ -1,0 +1,9 @@
+#headerTop {
+    background: #05445E;
+    display: flex;
+}
+
+#headerTop .headerTop__appName {
+    color: #fff;
+    padding: 10px;
+}

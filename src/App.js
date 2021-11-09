@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
+import Header from './components/Header';
+
+// Components
 import SearchBar from './components/SearchBar';
 
 function App() {
   return (
     <div className="app">
-        <h1>Cloud Kings</h1>
+        <Header />
         <SearchBar />
     </div>
   );
