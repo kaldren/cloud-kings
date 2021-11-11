@@ -1,0 +1,11 @@
+.headerMenuButton {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    cursor: pointer;
+    color: #D4F1F4;
+}
+
+.headerMenuButton:hover {
+    color: gray;
+}

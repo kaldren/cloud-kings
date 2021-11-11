@@ -1,9 +1,16 @@
 #headerTop {
     background: #05445E;
     display: flex;
+    justify-content: space-between;
 }
 
 #headerTop .headerTop__appName {
     color: #fff;
     padding: 10px;
+}
+
+#headerTop .headerTop__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
