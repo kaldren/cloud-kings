@@ -1,0 +1,19 @@
+#feed {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#feed .item {
+    margin: 10px;
+    cursor: pointer;
+}
+
+#feed .item:hover {
+    opacity: 0.8;
+    -moz-transition: all 0.4s ease-out;  /* FF4+ */
+    -o-transition: all 0.4s ease-out;  /* Opera 10.5+ */
+    -webkit-transition: all 0.4s ease-out;  /* Saf3.2+, Chrome */
+    -ms-transition: all 0.4s ease-out;  /* IE10? */
+    transition: all 0.4s ease-out;
+}
