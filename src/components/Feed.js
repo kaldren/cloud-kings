@@ -1,17 +1,33 @@
-import React from 'react'
+// Core
+import React, { useState, useEffect } from 'react';
+import { collection, doc, getDocs } from "firebase/firestore"; 
 import Item from './Item'
 
+import { db } from '../firebase'
+
+// Styles
 import './Feed.css'
 
 function Feed() {
+    const [items, setItems] = useState([]);
+
+    const itemsCollectionRef = collection(db, 'items');
+
+    useEffect(() => {
+        const getItems = async () => {
+            const items = await getDocs(itemsCollectionRef);
+
+            setItems(items.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+        }
+
+        getItems();
+    }, []);
+
     return (
         <div id="feed">
-            <Item image='https://picsum.photos/id/1/300/300' description='Lorem ipsum, dolor sit a...' price='15.99' />
-            <Item image='https://picsum.photos/id/22/300/300' description='Lorem ipsum, dolor sit a...' price='16.99' />
-            <Item image='https://picsum.photos/id/53/300/300' description='Lorem ipsum, dolor sit a...' price='25.99' />
-            <Item image='https://picsum.photos/id/46/300/300' description='Lorem ipsum, dolor sit a...' price='5.99' />
-            <Item image='https://picsum.photos/id/65/300/300' description='Lorem ipsum, dolor sit a...' price='45.99' />
-            <Item image='https://picsum.photos/id/116/300/300' description='Lorem ipsum, dolor sit a...' price='75.99' />
+            {items.map((item) => {
+                return <Item image={item.image} description={item.description} price={item.price} />
+            })}
         </div>
     )
 }
