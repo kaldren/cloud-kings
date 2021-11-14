@@ -1,23 +1,20 @@
 import React from 'react';
-import { BrowserRouter } from "react-router-dom";
 
 import Feed from './components/Feed';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 
 import './App.css';
+import Layout from './components/Layout';
 
 // Components
 
 function App() {
   return (
-    <div className="app">
-      <BrowserRouter>
-        <Header />
+      <div id="app">
         <SearchBar />
         <Feed />
-      </BrowserRouter>
-    </div>
+      </div>
   );
 }
 

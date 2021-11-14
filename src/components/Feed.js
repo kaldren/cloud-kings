@@ -1,6 +1,7 @@
 // Core
 import React, { useState, useEffect } from 'react';
-import { collection, doc, getDocs } from "firebase/firestore"; 
+import { Routes, Route, Link } from "react-router-dom";
+import { collection, doc, getDocs } from "firebase/firestore";
 
 import Item from './Item'
 
@@ -22,14 +23,20 @@ function Feed() {
         }
 
         getItems();
-    }, []);
+    }, [itemsCollectionRef]);
 
     return (
-        <div id="feed">
-            {items.map((item) => {
-                return <Item image={item.image} description={item.description} price={item.price} />
-            })}
-        </div>
+            <div id="feed">
+
+                {items.map((item) => {
+                    return (
+                        <Link to='/item'>
+                            <Item image={item.image} description={item.description} price={item.price} />
+                        </Link>
+                    )
+                })}
+
+            </div>
     )
 }
 
