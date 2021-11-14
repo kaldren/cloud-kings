@@ -8,8 +8,3 @@ a:link, a:visited,  a:hover, a:active
 {
     text-decoration: none;
 }
-
-#app {
-    width: 1240px;
-    margin: 0 auto;
-}

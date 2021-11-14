@@ -1,20 +1,16 @@
 import React from 'react';
 
 import Feed from './components/Feed';
-import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 
 import './App.css';
-import Layout from './components/Layout';
-
-// Components
 
 function App() {
   return (
-      <div id="app">
+      <React.Fragment>
         <SearchBar />
         <Feed />
-      </div>
+      </React.Fragment>
   );
 }
 

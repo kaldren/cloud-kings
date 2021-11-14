@@ -8,7 +8,7 @@ function Layout(props) {
     return (
         <React.Fragment>
             <Header />
-            <main id='main-layout'>
+            <main id='main'>
                 {props.children}
             </main>
         </React.Fragment>
