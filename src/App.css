@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+a:link, a:visited,  a:hover, a:active
+{
+    text-decoration: none;
+}
+
 #app {
     width: 1240px;
     margin: 0 auto;

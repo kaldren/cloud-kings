@@ -10,8 +10,11 @@
 }
 
 #headerTop .headerTop__appName {
-    color: #fff;
     padding: 10px;
+}
+
+#headerTop .headerTop__appName a {
+    color: #fff;
 }
 
 #headerTop .headerTop__navigation {
