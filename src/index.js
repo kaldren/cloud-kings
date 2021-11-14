@@ -13,7 +13,7 @@ import { store } from './app/store';
 import * as serviceWorker from './serviceWorker';
 
 import './index.css';
-import ItemProfile from './routes/ItemProfile';
+import ItemProfile from './components/ItemProfile';
 import Layout from './components/Layout';
 
 ReactDOM.render(
