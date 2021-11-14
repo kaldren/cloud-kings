@@ -3,7 +3,7 @@ import './HeaderMenuButton.css'
 
 function HeaderMenuButton({title, Icon}) {
     return (
-        <div id='headerMenuButton'>
+        <div className='headerMenuButton'>
             {Icon && <Icon className='headerMenuButton__icon' />}
             {title}
         </div>
