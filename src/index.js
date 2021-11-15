@@ -24,7 +24,7 @@ ReactDOM.render(
 
           <Routes>
             <Route path="/" element={<App />} />
-            <Route path="item" element={<ItemProfile />} />
+            <Route path="items/:id" element={<ItemProfile />} />
           </Routes>
 
         </Layout>

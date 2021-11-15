@@ -30,7 +30,10 @@ function Feed() {
 
                 {items.map((item) => {
                     return (
-                        <Link to='/item'>
+                        <Link 
+                            to={`/items/${item.id}`}
+                            key={item.id}
+                        >
                             <Item image={item.image} description={item.description} price={item.price} />
                         </Link>
                     )
