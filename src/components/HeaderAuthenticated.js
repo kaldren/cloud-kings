@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
 import 'bootstrap/dist/css/bootstrap.css';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -14,7 +16,7 @@ function HeaderAuthenticated({user}) {
             <DropdownButton id="dropdown-basic-button" title={user.displayName}>
                 <Dropdown.Item href="#/action-2">Messages</Dropdown.Item>
                 <Dropdown.Item href="#/action-1">Settings</Dropdown.Item>
-                <button onClick={signOut}> Logout </button>
+                <Link to="/" onClick={signOut} class="dropdown-item"> Logout </Link>
             </DropdownButton>
         </React.Fragment>
     )
