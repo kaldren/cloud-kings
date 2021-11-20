@@ -2,7 +2,7 @@ import React from 'react'
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-import HeaderMenuButton from './HeaderMenuButton';
+import Button from './Button';
 import LoginIcon from '@mui/icons-material/Login';
 
 
@@ -15,7 +15,6 @@ function Login() {
     const authenticate = () => {
         return signInWithPopup(auth, provider)
             .then((result) => {
-                console.log(result);
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
@@ -38,7 +37,7 @@ function Login() {
     return (
         <div>
             <p>Please, login first</p>
-            <HeaderMenuButton title='Login' onClick={authenticate} Icon={LoginIcon} />
+            <Button title='Login' onClick={authenticate} Icon={LoginIcon} />
         </div>
     )
 }
