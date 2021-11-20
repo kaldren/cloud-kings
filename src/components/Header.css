@@ -24,7 +24,7 @@
 }
 
 
-#headerTop .headerMenuButton {
+#headerTop .headerMenuButton a {
     display:flex;
     flex-direction: column;
 }

@@ -1,11 +1,13 @@
 import React from 'react'
-import { Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+// Custom
 import './Header.css'
 import AppSettings from '../appSettings';
-import HeaderMenuButton from './HeaderMenuButton';
+import {isAuthenticated} from '../auth'
+import HeaderAuthenticated from './HeaderAuthenticated';
+import HeaderNotAuthenticated from './HeaderNotAuthenticated';
 
-import LoginIcon from '@mui/icons-material/Login';
 
 function Header() {
     return (
@@ -15,10 +17,7 @@ function Header() {
                     <Link to='/'>{AppSettings.APP_NAME}</Link>
                 </h1>
                 <nav className='headerTop__navigation'>
-                    <HeaderMenuButton title='Home' />
-                    <HeaderMenuButton title='About' />
-                    <HeaderMenuButton title='Other' />
-                    <HeaderMenuButton title='Login' Icon={LoginIcon} />
+                    {isAuthenticated() === true ? <HeaderAuthenticated /> : <HeaderNotAuthenticated />}
                 </nav>
             </div>
         </header>
