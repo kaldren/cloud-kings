@@ -1,3 +1,9 @@
+import React from 'react'
+import {
+    Routes,
+    Route ,
+    Navigate
+  } from "react-router-dom";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 export function Auth() {
@@ -10,6 +16,7 @@ export function Auth() {
             // This gives you a Google Access Token. You can use it to access the Google API.
             const credential = GoogleAuthProvider.credentialFromResult(result);
             localStorage.setItem('googleAuth', JSON.stringify({'token': credential.accessToken, user: result.user}));
+            window.location.reload(false);
         }).catch((error) => {
             console.log(error);
             // Handle Errors here.
@@ -30,3 +37,12 @@ export function isAuthenticated() {
 export function getUserData() {
     return JSON.parse(localStorage.getItem('googleAuth')).user;
 }
+
+export const signOut = () => {
+    getAuth().signOut().then(()=> {
+        localStorage.removeItem('googleAuth');
+        window.location.reload(false);
+    }).catch((error) => {
+      console.log(error.message)
+    })
+  }
