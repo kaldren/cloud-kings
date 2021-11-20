@@ -3,11 +3,11 @@ import PersonIcon from '@mui/icons-material/Person';
 
 import HeaderMenuButton from './HeaderMenuButton'
 
-function HeaderAuthenticated() {
+function HeaderAuthenticated({user}) {
     return (
         <React.Fragment>
             <HeaderMenuButton title='Messages' route='' color='#fff' />
-            <HeaderMenuButton title='Profile' route='' color='#fff' Icon={PersonIcon} />
+            <HeaderMenuButton title={user.displayName} route='' color='#fff' Icon={PersonIcon} />
         </React.Fragment>
     )
 }

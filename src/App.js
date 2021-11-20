@@ -9,7 +9,7 @@ function App() {
   return (
       <React.Fragment>
         <SearchBar />
-        <Feed />
+        {/* <Feed /> */}
       </React.Fragment>
   );
 }

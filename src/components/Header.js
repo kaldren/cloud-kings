@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // Custom
 import './Header.css'
 import AppSettings from '../appSettings';
-import {isAuthenticated} from '../auth'
+import {isAuthenticated, getUserData} from '../auth'
 import HeaderAuthenticated from './HeaderAuthenticated';
 import HeaderNotAuthenticated from './HeaderNotAuthenticated';
 
@@ -17,7 +17,7 @@ function Header() {
                     <Link to='/'>{AppSettings.APP_NAME}</Link>
                 </h1>
                 <nav className='headerTop__navigation'>
-                    {isAuthenticated() === true ? <HeaderAuthenticated /> : <HeaderNotAuthenticated />}
+                    {isAuthenticated() === true ? <HeaderAuthenticated user={getUserData()} /> : <HeaderNotAuthenticated />}
                 </nav>
             </div>
         </header>
