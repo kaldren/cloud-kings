@@ -16,6 +16,7 @@ import './index.css';
 import ItemProfile from './components/ItemProfile';
 import Login from './components/Login';
 import Layout from './components/Layout';
+import New from './components/New';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,8 +26,8 @@ ReactDOM.render(
 
           <Routes>
             <Route path="/" element={<App />} />
+            <Route path="new" element={<New />} />
             <Route path="items/:id" element={<ItemProfile />} />
-            {/* <Route path="login" element={<Login />} /> */}
           </Routes>
 
         </Layout>

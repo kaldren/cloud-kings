@@ -10,6 +10,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ForumIcon from '@mui/icons-material/Forum';
+import FiberNewIcon from '@mui/icons-material/FiberNew';
 
 // Custom
 import {signOut} from '../auth'
@@ -17,8 +18,9 @@ import {signOut} from '../auth'
 function HeaderAuthenticated({user}) {
     return (
         <React.Fragment>
-            {/* <Button title='Messages' route='' color='#fff' />
-            <Button title={user.displayName} route='' color='#fff' Icon={PersonIcon} /> */}
+            <Link to="/new"> 
+                <span class='material-ui-icon'><FiberNewIcon /> </span>
+            </Link>
             <DropdownButton id="dropdown-basic-button" title={user.displayName}>
                 <Dropdown.Item href="#/action-2"><ForumIcon /> Messages</Dropdown.Item>
                 <Dropdown.Item href="#/action-1"> <SettingsIcon /> Settings</Dropdown.Item>
