@@ -2,9 +2,10 @@ import React from 'react'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 
 import './New.css';
+import GenericButton from './Button';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 function New() {
     return (
@@ -19,7 +20,7 @@ function New() {
                     <Form.Label>A little bit more detail...</Form.Label>
                     <Form.Control as="textarea" rows={3} />
                 </Form.Group>
-                <Button variant="primary">Create</Button>
+                <GenericButton text='Create' variant='primary' Icon={AddCircleIcon} />
             </Form>
         </div>
     )
