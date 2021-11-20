@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-import './Button.css'
+import './LinkButton.css'
 
-function Button({title, Icon, color, route, onClick}) {
+function LinkButton({title, Icon, color, route, onClick}) {
 
     return (
         <div className='headerMenuButton'>
@@ -15,4 +15,4 @@ function Button({title, Icon, color, route, onClick}) {
     )
 }
 
-export default Button
+export default LinkButton

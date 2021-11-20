@@ -4,9 +4,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import './New.css';
+
 function New() {
     return (
-        <div>
+        <div id='newItem'>
+            <h2>New item for sale</h2>
             <Form>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Short description</Form.Label>

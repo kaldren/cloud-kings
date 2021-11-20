@@ -2,7 +2,7 @@ import React from 'react'
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-import Button from './Button';
+import LinkButton from './LinkButton';
 import LoginIcon from '@mui/icons-material/Login';
 
 
@@ -37,7 +37,7 @@ function Login() {
     return (
         <div>
             <p>Please, login first</p>
-            <Button title='Login' onClick={authenticate} Icon={LoginIcon} />
+            <LinkButton title='Login' onClick={authenticate} Icon={LoginIcon} />
         </div>
     )
 }
