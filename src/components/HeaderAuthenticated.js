@@ -19,12 +19,12 @@ function HeaderAuthenticated({user}) {
     return (
         <React.Fragment>
             <Link to="/new"> 
-                <span class='material-ui-icon'><FiberNewIcon /> </span>
+                <span className='material-ui-icon'><FiberNewIcon /> </span>
             </Link>
             <DropdownButton id="dropdown-basic-button" title={user.displayName}>
                 <Dropdown.Item href="#/action-2"><ForumIcon /> Messages</Dropdown.Item>
                 <Dropdown.Item href="#/action-1"> <SettingsIcon /> Settings</Dropdown.Item>
-                <Link to="/" onClick={signOut} class="dropdown-item"> <MeetingRoomIcon /> Logout </Link>
+                <Link to="/" onClick={signOut} className="dropdown-item"> <MeetingRoomIcon /> Logout </Link>
             </DropdownButton>
         </React.Fragment>
     )
