@@ -34,7 +34,7 @@ function Feed() {
                             to={`/items/${item.id}`}
                             key={item.id}
                         >
-                            <Item image={item.image} description={item.description} price={item.price} />
+                            <Item image={item.image} description={item.shortDescription} price={item.price} />
                         </Link>
                     )
                 })}

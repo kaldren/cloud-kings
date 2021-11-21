@@ -29,17 +29,17 @@ function New() {
         const username = userData.displayName;
         const email = userData.email;
         const photo = userData.photoURL;
-    
+
         // Validation
     
         // Submit to firebase
         setDoc(doc(db, "items", uuidv4()), {
           username: username,
           email: email,
-          profile_picture : photo,
           shortDescription: data.shortDescription,
           longDescription: data.longDescription,
-          price: data.price
+          price: data.price,
+          image: generateRandomImage()
           })
           .then(() => {
             setIsCreated(1);
@@ -68,6 +68,10 @@ function New() {
                     <Form.Label>A little bit more detail...</Form.Label>
                     <Form.Control value={longDescription} onChange={(e) => setLongDescription(e.target.value)} as="textarea" placeholder="Explain in a more detail what are you selling..." rows={3} />
                 </Form.Group>
+                <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Label>Attach photo</Form.Label>
+                    <Form.Control type="file" />
+                </Form.Group>
                 <GenericButton 
                 text='Create' 
                 variant='primary' 
@@ -77,6 +81,10 @@ function New() {
             </Form>
         </div>
     )
+}
+
+function generateRandomImage() {
+    return `https://picsum.photos/id/${Math.floor(Math.random() * 100)}/300/300`;
 }
 
 export default New
