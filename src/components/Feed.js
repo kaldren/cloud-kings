@@ -1,7 +1,7 @@
 // Core
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs,query, orderBy, limit } from "firebase/firestore";
 
 import Item from './Item'
 
@@ -17,7 +17,9 @@ function Feed() {
 
     useEffect(() => {
         const getItems = async () => {
-            const items = await getDocs(itemsCollectionRef);
+            const itemsQuery = query(itemsCollectionRef, orderBy("price"), limit(6));
+            
+            var items = await getDocs(itemsQuery);
 
             setItems(items.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         }
