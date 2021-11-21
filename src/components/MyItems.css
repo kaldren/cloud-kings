@@ -1,0 +1,9 @@
+#myItems {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#myItems a {
+    margin: 10px;
+}
