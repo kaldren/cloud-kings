@@ -1,9 +1,10 @@
 #myItems {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
-#myItems a {
-    margin: 10px;
+#myItems .item {
+    margin: 15px;
+    text-align: center;
 }
