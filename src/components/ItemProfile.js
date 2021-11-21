@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { doc, getDoc} from "firebase/firestore";
 
 import { db } from '../firebase'
 import { useParams } from 'react-router';
 
-function ItemProfile({props}) {
+function ItemProfile() {
     let { id } = useParams();
     const [item, setItem] = useState([]);
 

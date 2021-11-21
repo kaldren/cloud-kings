@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Item from './Item'
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from '../firebase';
-
+import { doc, deleteDoc } from "firebase/firestore";
 import {getUserData} from '../auth';
 import './MyItems.css';
 import GenericButton from './GenericButton';
@@ -31,13 +31,23 @@ function MyItems() {
         getItems();
     }, [itemsCollectionRef]);
 
-    const submit = () => {
+    const submit = (e) => {
         confirmAlert({
           message: 'Are you sure you want to delete this item?',
           buttons: [
             {
               label: 'Yes',
-              onClick: () => alert('Click Yes')
+              onClick: () => {
+                  const itemId = e.target.parentNode.getAttribute('data-item-id');
+
+                  deleteDoc(doc(db, "items", itemId))
+                  .then(() => {
+                    console.log('DONE!');
+                  })    
+                  .catch(() => {
+                    console.log('Error!')
+                  });
+              }
             },
             {
               label: 'No',
@@ -52,14 +62,14 @@ function MyItems() {
         <div id="myItems">
                 {items.map((item) => {
                     return (
-                        <div className='item'>
+                        <div className='item' data-item-id={item.id} key={item.id}>
                             <Link 
                                 to={`/items/${item.id}`}
                                 key={item.id}
                             >
                                 <Item image={item.image} description={item.shortDescription} price={item.price} />
                             </Link>
-                            <GenericButton variant='danger' Icon={DeleteForeverIcon} text='Remove' onClick={submit} />
+                            <GenericButton variant='danger' Icon={DeleteForeverIcon} text='Remove' onClick={(e) => {submit(e)}} />
                         </div>
                     )
                 })}

@@ -19,7 +19,7 @@ import {signOut} from '../auth'
 function HeaderAuthenticated({user}) {
     return (
         <React.Fragment>
-            <img class='profile-photo' src={user.photoURL} alt={user.displayName} />
+            <img className='profile-photo' src={user.photoURL} alt={user.displayName} />
             <DropdownButton id="dropdown-basic-button" title={user.displayName}>
                 <Link to="/my-items" className="dropdown-item"> <ListAltIcon /> My items </Link>
                 <Link to="/new" className="dropdown-item"> <FiberNewIcon /> Sell item </Link>
