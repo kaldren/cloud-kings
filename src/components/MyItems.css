@@ -8,3 +8,12 @@
     margin: 15px;
     text-align: center;
 }
+
+.item-options {
+    display: flex;
+    justify-content: center;
+}
+
+.item-options button {
+    margin: 0 5px;
+}
