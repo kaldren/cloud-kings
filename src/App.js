@@ -8,8 +8,8 @@ import './App.css';
 function App() {
   return (
       <React.Fragment>
-        <SearchBar />
-        <Feed />
+        {/* <SearchBar />
+        <Feed /> */}
       </React.Fragment>
   );
 }
