@@ -17,6 +17,7 @@ import ItemProfile from './components/ItemProfile';
 import MyItems from './components/MyItems';
 import Layout from './components/Layout';
 import New from './components/New';
+import Login from './components/Login';
 
 import {RequireAuth} from './requireAuth';
 
@@ -28,6 +29,7 @@ ReactDOM.render(
 
           <Routes>
             <Route path="/" element={<App />} />
+            <Route path="/login" element={<Login />} />
             <Route path="items/:id" element={<ItemProfile />} />
             <Route path="/my-items" element={
               <RequireAuth>
