@@ -18,6 +18,8 @@ import MyItems from './components/MyItems';
 import Layout from './components/Layout';
 import New from './components/New';
 
+import {RequireAuth} from './requireAuth';
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -26,9 +28,17 @@ ReactDOM.render(
 
           <Routes>
             <Route path="/" element={<App />} />
-            <Route path="/my-items" element={<MyItems />} />
-            <Route path="new" element={<New />} />
             <Route path="items/:id" element={<ItemProfile />} />
+            <Route path="/my-items" element={
+              <RequireAuth>
+                <MyItems />
+              </RequireAuth>
+            } />
+            <Route path="new" element={
+              <RequireAuth>
+                <New />
+              </RequireAuth>
+            } />
           </Routes>
 
         </Layout>

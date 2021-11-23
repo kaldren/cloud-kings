@@ -5,7 +5,7 @@ import './AlertBox.css';
 
 function AlertBox({title, variant}) {
     return (
-        <div class='alert-box'>
+        <div className='alert-box'>
             <Alert variant={variant}>
                 {title}
             </Alert>
