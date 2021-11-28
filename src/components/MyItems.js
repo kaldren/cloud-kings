@@ -13,6 +13,7 @@ import EditIcon from '@mui/icons-material/Edit';
 
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
@@ -37,27 +38,30 @@ function MyItems() {
     }, [itemsCollectionRef]);
 
     const [show, setShow] = useState(false);
+    const [showEdit, setShowEdit] = useState(false);
     const [selectedItem, setSelectedItem] = useState({});
     const [isItemDeleted, setIsItemDeleted] = useState(false);
+    const [isItemEdited, setIsItemEdited] = useState(false);
 
     const handleClose = () => setShow(false);
+    const handleCloseEdit = () => setShowEdit(false);
 
     const handleShowEdit = (e) => {
-        setShow(true);
+        setShowEdit(true);
         const itemId = e.target.parentNode.parentNode.getAttribute('data-item-id');
         setSelectedItem(itemId);
     }
 
     const handleEdit = (e) => {
         const itemId = e.target.parentNode.getAttribute('data-item-id');
-
-        deleteDoc(doc(db, "items", itemId))
-            .then(() => {
-                setShow(false);
-            })
-            .catch(() => {
-                console.log('Error!')
-            });
+        setIsItemEdited(true);
+        // deleteDoc(doc(db, "items", itemId))
+        //     .then(() => {
+        //         setShow(false);
+        //     })
+        //     .catch(() => {
+        //         console.log('Error!')
+        //     });
     }
 
     const handleShowDelete = (e) => {
@@ -103,7 +107,7 @@ function MyItems() {
                 {isItemDeleted === true ? <AlertBox title='Deletion successful.' variant='success' /> :
                     <div>
                         <Modal.Header closeButton>
-                            <Modal.Title>Deleting {selectedItem.title}</Modal.Title>
+                            <Modal.Title>Deleting</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>Are you sure you want to delete this?</Modal.Body>
                         <Modal.Footer>
@@ -120,6 +124,48 @@ function MyItems() {
                         </Modal.Footer>
                     </div>
                 }
+            </Modal>
+
+            <Modal show={showEdit} onHide={handleCloseEdit}>
+                {isItemEdited === true ? <AlertBox title='Edit successful.' variant='success' /> :
+
+                    <div>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Edit</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                        <Form>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                                </Form.Text>
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" />
+                            </Form.Group>
+                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                                <Form.Check type="checkbox" label="Check me out" />
+                            </Form.Group>
+                        </Form>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <GenericButton
+                                text='Cancel'
+                                variant='secondary'
+                                onClick={handleCloseEdit}
+                                classList={isItemDeleted === true ? 'disabled' : ''} />
+                            <GenericButton
+                                text='Save'
+                                variant='success'
+                                onClick={handleEdit}
+                                classList={isItemDeleted === true ? 'disabled' : ''} />
+                        </Modal.Footer>
+                    </div>
+            }        
             </Modal>
         </div>
     )
