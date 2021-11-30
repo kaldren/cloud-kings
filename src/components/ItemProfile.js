@@ -20,8 +20,9 @@ function ItemProfile() {
 
     return (
         <div className='itemProfile'>
-            <img src={item?.image} alt={item.description} />
-            <p>{item?.description}</p>
+            <img src={item?.image} alt={item.shortDescription} />
+            <p>{item?.shortDescription}</p>
+            <p>{item?.longDescription}</p>
             <p>{item?.price}</p>
         </div>
     )
