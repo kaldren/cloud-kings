@@ -32,7 +32,7 @@ function ItemProfile() {
             <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={item?.image} alt={item.shortDescription} />
             <Card.Body>
-            <Link to={`/user/${item.username}`}>etst</Link>
+            <Link to={`/users/${item.username}`}>etst</Link>
                 
                 <Card.Title>{item?.shortDescription}</Card.Title>
                 <Card.Text>

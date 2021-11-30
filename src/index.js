@@ -20,6 +20,8 @@ import New from './components/New';
 import Login from './components/Login';
 
 import { RequireAuth, RequireNotAuth } from './authMiddleware';
+import UserProfile from './components/UserProfile';
+import Oops from './components/Oops';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -29,11 +31,13 @@ ReactDOM.render(
 
           <Routes>
             <Route path="/" element={<App />} />
+            <Route path="/oops" element={<Oops />} />
             <Route path="/login" element={
               <RequireNotAuth>
                 <Login />
               </RequireNotAuth>
             } />
+            <Route path="users/:id" element={<UserProfile />} />
             <Route path="items/:id" element={<ItemProfile />} />
             <Route path="/my-items" element={
               <RequireAuth>
