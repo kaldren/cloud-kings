@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import { doc, getDoc} from "firebase/firestore";
 
 import { db } from '../firebase'
 import { useParams } from 'react-router';
+
+import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
+import Card  from 'react-bootstrap/Card';
+import Button  from 'react-bootstrap/Button';
+
+import './ItemProfile.css';
 
 function ItemProfile() {
     let { id } = useParams();
@@ -20,10 +29,21 @@ function ItemProfile() {
 
     return (
         <div className='itemProfile'>
-            <img src={item?.image} alt={item.shortDescription} />
-            <p>{item?.shortDescription}</p>
-            <p>{item?.longDescription}</p>
-            <p>{item?.price}</p>
+            <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src={item?.image} alt={item.shortDescription} />
+            <Card.Body>
+            <Link to={`/user/${item.username}`}>etst</Link>
+                
+                <Card.Title>{item?.shortDescription}</Card.Title>
+                <Card.Text>
+                    {item?.longDescription}
+                </Card.Text>
+                <div class='itemProfile__icons'>
+                    <Button><ThumbUpAltIcon/></Button>
+                    <Button><FavoriteIcon/></Button>
+                </div>
+            </Card.Body>
+            </Card>
         </div>
     )
 }
