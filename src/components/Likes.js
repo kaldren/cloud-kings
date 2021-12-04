@@ -47,7 +47,7 @@ function Likes() {
                     className="d-flex justify-content-between align-items-start"
                 >
                     <div className="ms-2 me-auto">
-                        <div className="fw-bold"><Link to='/'>{like.shortDescription}</Link></div>
+                        <div className="fw-bold"><Link to={`/items/${like.id}`}>{like.shortDescription}</Link></div>
                         Cras justo odio
                     </div>
                     <Badge variant="primary" pill>
