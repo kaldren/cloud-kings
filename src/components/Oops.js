@@ -5,7 +5,7 @@ import './Oops.css'
 
 function Oops() {
     return (
-        <div class='oops'>
+        <div className='oops'>
             <img src={err} alt='Not found!' />
         </div>
     )

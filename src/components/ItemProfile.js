@@ -25,7 +25,7 @@ function ItemProfile() {
         }
 
         getItem();
-    }, []);
+    }, [id]);
 
     return (
         <div className='itemProfile'>
@@ -38,7 +38,7 @@ function ItemProfile() {
                 <Card.Text>
                     {item?.longDescription}
                 </Card.Text>
-                <div class='itemProfile__icons'>
+                <div className='itemProfile__icons'>
                     <Button><ThumbUpAltIcon/></Button>
                     <Button><FavoriteIcon/></Button>
                 </div>

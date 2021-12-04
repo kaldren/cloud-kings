@@ -25,7 +25,7 @@ function Feed() {
         }
 
         getItems();
-    }, [itemsCollectionRef]);
+    }, []);
 
     return (
             <div id="feed">
