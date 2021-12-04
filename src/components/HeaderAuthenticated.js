@@ -12,6 +12,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import ForumIcon from '@mui/icons-material/Forum';
 import FiberNewIcon from '@mui/icons-material/FiberNew';
 import ListAltIcon from '@mui/icons-material/ListAlt';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 // Custom
 import {signOut} from '../auth'
@@ -23,6 +24,7 @@ function HeaderAuthenticated({user}) {
             <DropdownButton id="dropdown-basic-button" title={user.displayName}>
                 <Link to="/my-items" className="dropdown-item"> <ListAltIcon /> My items </Link>
                 <Link to="/new" className="dropdown-item"> <FiberNewIcon /> Sell item </Link>
+                <Link to="/likes" className="dropdown-item"> <FavoriteIcon /> Your likes </Link>
                 <Dropdown.Item href="#/action-2"><ForumIcon /> Messages</Dropdown.Item>
                 <Dropdown.Item href="#/action-3"> <SettingsIcon /> Settings</Dropdown.Item>
                 <Link to="/" onClick={signOut} className="dropdown-item"> <MeetingRoomIcon /> Logout </Link>
