@@ -23,6 +23,7 @@ import { RequireAuth, RequireNotAuth } from './authMiddleware';
 import UserProfile from './components/UserProfile';
 import Oops from './components/Oops';
 import Likes from './components/Likes';
+import Search from './components/Search';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -33,6 +34,7 @@ ReactDOM.render(
           <Routes>
             <Route path="/" element={<App />} />
             <Route path="/oops" element={<Oops />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/login" element={
               <RequireNotAuth>
                 <Login />
