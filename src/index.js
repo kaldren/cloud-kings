@@ -24,6 +24,7 @@ import UserProfile from './components/UserProfile';
 import Oops from './components/Oops';
 import Likes from './components/Likes';
 import Search from './components/Search';
+import About from './components/About';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -35,6 +36,7 @@ ReactDOM.render(
             <Route path="/" element={<App />} />
             <Route path="/oops" element={<Oops />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/about" element={<About />} />
             <Route path="/login" element={
               <RequireNotAuth>
                 <Login />
