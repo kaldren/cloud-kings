@@ -33,7 +33,10 @@ function New() {
         // Validation
     
         // Submit to firebase
-        setDoc(doc(db, "items", uuidv4()), {
+        const itemId = uuidv4();
+
+        setDoc(doc(db, "items", itemId), {
+          id: itemId,
           username: username,
           email: email,
           shortDescription: data.shortDescription,

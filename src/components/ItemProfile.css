@@ -1,6 +1,6 @@
 .itemProfile__icons {
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 .itemProfile__icons .btn {

@@ -25,6 +25,7 @@ import Oops from './components/Oops';
 import Likes from './components/Likes';
 import Search from './components/Search';
 import About from './components/About';
+import Pricing from './components/Pricing';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -37,6 +38,7 @@ ReactDOM.render(
             <Route path="/oops" element={<Oops />} />
             <Route path="/search" element={<Search />} />
             <Route path="/about" element={<About />} />
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="/login" element={
               <RequireNotAuth>
                 <Login />

@@ -20,6 +20,9 @@ export function isAuthenticated() {
 }
 
 export function getUserData() {
+    if (localStorage.getItem("googleAuth") === null) {
+        return undefined;
+    }
     return JSON.parse(localStorage.getItem('googleAuth')).user;
 }
 

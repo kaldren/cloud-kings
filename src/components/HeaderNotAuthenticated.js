@@ -10,7 +10,7 @@ function HeaderAuthenticated() {
         <React.Fragment>
             <LinkButton title='Home' route='' color='#fff' />
             <LinkButton title='About' route='/about' color='#fff' />
-            <LinkButton title='Other' route='' color='#fff' />
+            <LinkButton title='Pricing' route='/pricing' color='#fff' />
             <LinkButton title='Login' route='' color='#fff' onClick={Auth} Icon={LoginIcon} />
         </React.Fragment>
     )
