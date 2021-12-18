@@ -14,7 +14,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
-import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
+// import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import AlertBox from './AlertBox';
 
 function MyItems() {
