@@ -44,7 +44,7 @@ function ItemProfile() {
                         {item?.price} {AppSettings.CURRENCY}
                     </Badge>
                     <div className='itemProfile__icons'>
-                        <Button><FavoriteIcon onClick={(e) => handleItemLike(id)}/></Button>
+                        <Button className='likeBtn'><FavoriteIcon onClick={(e) => handleItemLike(id)}/></Button>
                     </div>
                 </Card.Body>
             </Card>
@@ -72,5 +72,7 @@ async function handleItemLike(id) {
     await updateDoc(likesRef, {
         "itemIds": arrayUnion(id)
     });
+
+    document.querySelector('.itemProfile__icons .likeBtn').style.backgroundColor = 'red';
 }
 export default ItemProfile
